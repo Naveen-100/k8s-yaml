@@ -1,0 +1,15 @@
+# enter into side car container
+# kubectl exec -it -n roboshop multiple -c sidecar -- bash
+# -c = container
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multiple
+  namespace: roboshop
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+  - image: almalinux
+    name: sidecar
+    command: ["sleep", "200"]

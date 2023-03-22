@@ -1,0 +1,14 @@
+# once image pulled by k8s it wont get new updated features if we made changes on that image
+# by imagePullPolicy we can pull image while using apply (we get new image)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  namespace: roboshop
+spec:
+  containers:
+  - image: nginx:1.14.2
+    imagePullPolicy: Always
+    name: nginx
+    ports:
+      - containerPort: 80

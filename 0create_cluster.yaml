@@ -1,0 +1,16 @@
+# eksctl create cluster --config-file=0create_cluster.yaml
+# eksctl delete cluster --config-file=0create_cluster.yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: spot-cluster
+  region: ap-south-1
+
+managedNodeGroups:
+
+# `instanceTypes` defaults to [`m5.large`] with 2 instances
+- name: spot-1
+  spot: true
+  ssh:
+    publicKeyName: AWS-1

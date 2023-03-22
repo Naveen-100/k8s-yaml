@@ -1,0 +1,17 @@
+# liveness probe & readiness probe == Health checks
+# livenessProbe when container start's running
+# readinessProbe to check wheather container ready to serve request or not
+apiVersion: v1
+kind: Pod
+metadata:
+  name: probe
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 80
+      initialDelaySeconds: 3
+      periodSeconds: 5
