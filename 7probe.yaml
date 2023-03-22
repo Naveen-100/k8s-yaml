@@ -1,6 +1,13 @@
 # liveness probe & readiness probe == Health checks
 # livenessProbe when container start's running
 # readinessProbe to check wheather container ready to serve request or not
+# kubectl apply -f 7probe.yaml
+# kubectl get pods
+# take duplicate session & enter into container
+# kubectl exec -it probe -- bash
+# cd /usr/share/nginx/html
+# rm -rf index.html
+# watch kubectl get pods // we can observe that it restart's container (get index.html)
 apiVersion: v1
 kind: Pod
 metadata:
