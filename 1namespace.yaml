@@ -1,3 +1,5 @@
+# kubectl create -f 1namespace.yaml
+# kubectl delete ns roboshop
 apiVersion: v1
 kind: Namespace
 metadata:

@@ -1,0 +1,13 @@
+# kubectl apply -f 12pod_config2.yaml
+# kubectl delete -f 12pod_config2.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: config-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    envFrom:
+      - configMapRef:
+            name: course-config

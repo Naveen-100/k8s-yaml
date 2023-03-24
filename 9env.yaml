@@ -1,0 +1,23 @@
+# kubectl apply -f 9env.yaml
+# kubectl exec -it env -- bash or kubectl describe pod env
+# env // we can see env variables
+# kubectl delete -f 9env.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env
+spec:
+  containers:
+  - name: ngin
+    image: nginx
+    env:
+    - name: course
+      value: docker
+    - name: trainer
+      value: naveen
+    - name: duration
+      value: 25hrs
+    - name: DB_HOST
+      value: db.admin.com
+    - name: username
+      value: naveen

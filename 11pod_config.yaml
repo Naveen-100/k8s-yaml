@@ -1,0 +1,24 @@
+# kubectl apply -f 11pod_config.yaml
+# kubectl exec -it nginx -- bash
+# env // then only we can see env variables from config maps
+# kubectl delete pod nginx
+# Note: configmaps helps us to not to change pod definition for updating configuration of container
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      env:
+        - name: course
+          valueFrom:
+            configMapKeyRef:
+              name: course-config
+              key: course
+        - name: duration
+          valueFrom:
+            configMapKeyRef:
+              name: course-config
+              key: duration

@@ -1,0 +1,3 @@
+alias ka='kubectl apply -f'
+alias kd='kubectl delete -f'
+alias kds='kubectl describe pod'

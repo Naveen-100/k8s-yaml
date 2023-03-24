@@ -1,0 +1,9 @@
+# kubectl apply -f 10configmap.yaml
+# kubectl describe configmap course-config
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: course-config
+data:
+  course: docker
+  duration: 30hr

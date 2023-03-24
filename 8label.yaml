@@ -1,0 +1,17 @@
+# kubectl apply -f 8label.yaml
+# kubectl describe pod label-pod
+# kubectl delete pod label-pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: label-pod
+  labels:
+    course: docker
+    duration: 25hr
+    trainer: naveen
+  annotations:
+    org.docker.kubernetes.image.maintainer: naveen
+spec:
+  containers:
+  - name: nginx
+    image: nginx
