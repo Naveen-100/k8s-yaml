@@ -5,6 +5,7 @@
 # kubectl get pods -o wide // get node that it is running container
 # login into ec2
 # top // observe utilization of cpu (it won't go beyond 20%)
+# requests should be < or = limits
 apiVersion: v1
 kind: Pod
 metadata:
